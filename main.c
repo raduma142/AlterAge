@@ -8,8 +8,8 @@
 
 
 #include <stdio.h>
-#include "menu.c"
-#include "game.c"
+#include "./menu/menu.c"
+#include "./game/game.c"
 
 int main(int argc, char **argv)
 {
