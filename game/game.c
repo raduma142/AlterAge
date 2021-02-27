@@ -1,19 +1,6 @@
 #include <threads.h>
 #include <time.h>
-
-int draw(void *drawArgs)
-{
-	int* count = (int *) drawArgs;
-	printf("%d\n", *count);
-	*count += 1;
-	
-	struct timespec duration = {1, 0};
-	thrd_sleep(&duration, NULL);
-	
-	thrd_exit(0);
-	
-	return(0);
-}
+#include "draw.c"
 
 void game()
 {
@@ -26,10 +13,9 @@ void game()
 	do
 	{
 		clockNow = clock();
-		if (clock() - clockNow > 100)
+		if (clock() - clockNow > 500){
 			thrd_create(&thrdDrawId, draw, (void *)&drawArgs);
+			thrd_join(thrdDrawId, NULL);
+		}
 	} while (1);
-	
-	//thrd_join(thrdDrawId, NULL);
-
 }
