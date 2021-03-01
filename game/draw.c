@@ -1,23 +1,27 @@
-struct displaySize {
-	short w;
-	short h;
-} dSize;
+#include "./display/init.c"
 
 int draw(void *drawArgs)
 {
-	dSize.w = 10;
-	dSize.h = 10;
+	short w = 20;
+	short h = 10;
+	char dMap[w][h];
+	char (*p)[w] = dMap;
 	
-	char drawPixels[dSize.h][dSize.w];
+	dMap_init(&p, w, h);	
+	//Construct Frame
+	for (int x = 0; x < w; x++){
+		dMap[x][0] = '#';
+		dMap[x][h - 1] = '#';
+	}
+	for (int y = 0; y < h; y++){
+		dMap[0][y] = '#';
+		dMap[w - 1][y] = '#';
+	}
 	
-	for (int y = 0; y < dSize.h; y++)
-		for (int x = 0; x < dSize.w; x++){
-			drawPixels[y][x] = '#';
-		}
-		
-	for (int y = 0; y < dSize.h; y++){
-		for (int x = 0; x < dSize.w; x++){
-			printf("%c", drawPixels[y][x]);
+	//draw Display Map to Screen
+	for (int x = 0; x < w; x++){
+		for (int y = 0; y < h; y++){
+			printf("%c", dMap[x][y]);
 		}
 		printf("\n");
 	}

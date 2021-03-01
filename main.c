@@ -8,6 +8,7 @@
 
 
 #include <stdio.h>
+
 #include "./menu/menu.c"
 #include "./game/game.c"
 
