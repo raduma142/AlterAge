@@ -2,7 +2,9 @@
 void init(){
 	//Init player position
 	plrA = 0;
-	plrR = 10;
+	plrR = 13;
+	
+	//FGHJKL:"
 	
 	//Init screen Size
 	w = 60;
@@ -30,11 +32,11 @@ void init(){
 	world_desc[0].A2 = 2;
 	world_desc[0].a = 0;
 	world_desc[0].b = 0;
-	world_desc[0].c = 8;
+	world_desc[0].c = 15;
 	
-	world_desc[1].A1 = 0;
-	world_desc[1].A2 = 3;
-	world_desc[1].a = 0;
-	world_desc[1].b = 0;
-	world_desc[1].c = 12;
+	world_desc[1].A1 = -2;
+	world_desc[1].A2 = 2;
+	world_desc[1].a = 3;
+	world_desc[1].b = 3;
+	world_desc[1].c = 10;
 }
