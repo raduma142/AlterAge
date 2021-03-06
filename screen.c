@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 //Data in main.c
 
 void screen(char **scr_cont) {
@@ -15,4 +13,5 @@ void screen(char **scr_cont) {
 		}
 		printf("\n");
 	}
+	printf("%f", sA);
 }
