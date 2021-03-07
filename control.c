@@ -10,7 +10,6 @@ int put_enter(){
 }
 
 void control(){
-	
 	//thrd_join(thrdDrawId, NULL);
 	//char c = getc(stdin);
 }

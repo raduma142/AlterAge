@@ -1,6 +1,6 @@
 //Data in main.c
 
-void screen(char **scr_cont) {
+void screen() {
 	//Clear screen
 	//printf("\033[2J"); /* Clear the entire screen. */
 	printf("\033[0;0f"); /* Move cursor to the top left hand corner*/
@@ -13,5 +13,5 @@ void screen(char **scr_cont) {
 		}
 		printf("\n");
 	}
-	printf("%f", sA);
+	//printf("%f", sA);
 }

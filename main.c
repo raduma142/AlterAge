@@ -3,15 +3,15 @@
 #include <math.h>
 #include <threads.h>
 #include <time.h>
-//#include <time.h>
 
 //Common DATA
 
 //Screen
-char **screen_content;
+char **scr_cont;
 int w, h;
 double sA1, sA2, sA;
 double sR1, sR2;
+
 //Description
 struct F_t {
 	double A1, A2;
@@ -19,6 +19,7 @@ struct F_t {
 };
 struct F_t *world_desc;
 int world_desc_N;
+
 //Player
 int plrA, plrR;
 
@@ -33,22 +34,23 @@ int main(int argc, char **argv)
 {
 	init();
 	
-	thrd_t thrdDrawId;
-	thrd_create(&thrdDrawId, put_enter, NULL);
+	//thrd_t thrdDrawId;
+	//thrd_create(&thrdDrawId, put_enter, NULL);
 	
+	//Loop
 	while (1) {
 		control();
 		nature();
-		render(screen_content);
-		screen(screen_content);
+		render();
+		screen();
 	};
 	
 	//Free
 	free(world_desc);
 	for (int i = 0; i < w; i++){
-		free(screen_content[i]);
+		free(scr_cont[i]);
 	}
-	free(screen_content);
+	free(scr_cont);
+	
 	return 0;
 }
-
